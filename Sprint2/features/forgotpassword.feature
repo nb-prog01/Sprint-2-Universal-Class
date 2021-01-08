@@ -1,0 +1,17 @@
+Feature: For Forgot password 
+
+  Scenario: Successful recovery of Forgot password
+    Given user is on Member Sign-in page
+    And user clicks on the Forgot password link
+    Then recovery page should load
+    When user enters registered email
+    And clicks on Reset password button
+    Then successful message should be displayed 
+  
+  Scenario: Unsuccessful recovery of Forgot password
+    Given user is on Member Sign-in page
+    And user clicks on the Forgot password link
+    Then recovery page should load
+    When user enters unregistered email
+    And clicks on Reset password button
+    Then error message should be displayed 
