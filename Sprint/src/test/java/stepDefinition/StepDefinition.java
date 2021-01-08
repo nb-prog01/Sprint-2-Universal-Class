@@ -43,14 +43,18 @@ public class StepDefinition {
 
     @When("^user enters registered (.+) and (.+)$")
     public void user_enters_registered_and(String username, String password) throws Throwable {
+    	SignIn si = new SignIn(driver);
     driver.navigate().to("https://members.universalclass.com/login.htm");
     //Thread.sleep(5000);
-    driver.findElement(By.name("username")).sendKeys(username); 
+   // driver.findElement(By.name("username")).sendKeys(username); 
+    	si.enterEmail(username);
     Thread.sleep(1500);
-    driver.findElement(By.name("password")).sendKeys(password);
+    //driver.findElement(By.name("password")).sendKeys(password);
+    si.enterPassword(password);
     Thread.sleep(1500);
-    driver.findElement(By.name("SubmitButton")).click();
-    Thread.sleep(500);
+    //driver.findElement(By.name("SubmitButton")).click();
+    si.submit();
+    Thread.sleep(1500);
     }
 
     @Then("^Member Sign-in page should load$")
@@ -73,28 +77,37 @@ public class StepDefinition {
 
     @And("^user clicks on the hamburger button$")
     public void user_clicks_on_the_hamburger_button() throws Throwable {
-        driver.findElement(By.id("clssicon")).click();
+        SignIn si=new SignIn(driver);
+        si.cl();
+    	//driver.findElement(By.id("clssicon")).click();
+        
     }
 
     @And("^user navtigates to and clicks the Sign-in option$")
     public void user_navtigates_to_and_clicks_the_signin_option() throws Throwable {
-    	driver.findElement(By.xpath("//*[@id=\"clssmnucontent\"]/div/a[1]"));
+    	//driver.findElement(By.xpath("//*[@id=\"clssmnucontent\"]/div/a[1]"));
+    	SignIn si=new SignIn(driver);
+    	si.sign1();
     	Thread.sleep(5000);
     }
 
     @And("^user enters (.+) in the search box$")
     public void user_enters_in_the_search_box(String searchtext) throws Throwable {
-       driver.findElement(By.id("SearchString")).sendKeys(searchtext);
+       //driver.findElement(By.id("SearchString")).sendKeys(searchtext);
+    	SearchBox sb= new SearchBox(driver);
+    	sb.find(searchtext);
     }
 
     @And("^clicks the search button$")
     public void clicks_the_search_button() throws Throwable {
-       driver.findElement(By.id("searchicon"));
+       //driver.findElement(By.id("searchicon"));
+    	SearchBox sb= new SearchBox(driver);
+    	sb.enter();
     }
     @After
     public void teardown() throws InterruptedException
     {
     	Thread.sleep(3500);
-    	//driver.close();
+    	driver.close();
     }
 }
