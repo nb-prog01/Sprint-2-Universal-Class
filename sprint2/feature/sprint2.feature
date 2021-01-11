@@ -14,8 +14,7 @@ And open the Universal class website in browser
     And user enters <Firstname>, <Lastname>, <email>, <password>
     And agrees to the terms and services checkbox
     And user clicks on Sign-up button
-    Then Client homepage should load
-
+    
     Examples: 
       | Firstname | Lastname |            email           |       password     |
       |  Hardik	  |  Thakur  | hardikthakur1111@gmail.com |      1234567890    |

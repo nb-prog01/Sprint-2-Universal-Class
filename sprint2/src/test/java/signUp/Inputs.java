@@ -1,5 +1,7 @@
 package signUp;
 
+import static org.testng.Assert.assertEquals;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -46,5 +48,10 @@ public class Inputs {
 	}
 	public void submit() {
 		driver.findElement(submit).click();
+	}
+	public void validation() {
+		String actual=driver.getTitle();
+		String expected="My Shopping Cart | UniversalClass.com";
+		assertEquals(actual,expected);
 	}
 }

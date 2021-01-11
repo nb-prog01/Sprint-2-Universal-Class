@@ -38,7 +38,8 @@ public class StepDefination {
 
     @Then("^Pricing page page should load$")
     public void pricing_page_page_should_load() throws Throwable {
-       
+    	sp=new Inputs(driver);
+    	sp.validation();
     }
 
     @Then("^Sign-up page should load$")
@@ -46,10 +47,6 @@ public class StepDefination {
         
     }
 
-    @Then("^Client homepage should load$")
-    public void client_homepage_should_load() throws Throwable {
-        
-    }
 
     @And("^open the Universal class website in browser$")
     public void open_the_universal_class_website_in_browser() throws Throwable {
