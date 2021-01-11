@@ -1,5 +1,7 @@
 package stepDefinitions;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -45,26 +47,43 @@ public class stepDefinition {
 
     @When("^user enters unregistered email$")
     public void user_enters_unregistered_email() throws Throwable {
-    	String mail="abcd";
+    	String mail="billmurray@gmail.com";
     	fp.typeInvalidEmailAdd(mail);
         Thread.sleep(2000);
     }
 
+    @Then("^forgotton password page is loaded successfully$")
+    public void forgotton_password_page_is_loaded_successfully() throws Throwable {
+        String expTitle="UniversalClass™ Member Services";
+    	String actualTitle=driver.getTitle();
+    	assertEquals(expTitle,actualTitle);
+        System.out.println("Page Title "+actualTitle);
+        System.out.println(driver.findElement(By.tagName("h1")).getText());
+    	System.out.println("Forgotton password page loaded successfully");
+    }
+    
     @Then("^recovery page should load$")
     public void recovery_page_should_load() throws Throwable {        
     
     	fp=new ForgottonPassword(driver);
+    	System.out.println("Forgotton password page loaded successfully");
     }
 
     @Then("^successful message should be displayed$")
     public void successful_message_should_be_displayed() throws Throwable {
+    	
+    	String expectedMsg="Successfully sent password reset information to josephphils@gmail.com!";
     	String resetMsg=fp.displaySuccessResetMsg();
+    	assertEquals(expectedMsg, resetMsg);
     	System.out.println("Success Msg: "+resetMsg);
     }
 
     @Then("^error message should be displayed$")
     public void error_message_should_be_displayed() throws Throwable {
+    	
+    	String expectedMsg="There is no match for an account with that email address.";
     	String resetMsg=fp.displayErrorResetMsg();
+    	assertEquals(expectedMsg, resetMsg);
         System.out.println("Failure Msg: "+resetMsg);
     }
 

@@ -6,7 +6,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
-
+/*
 // Run with junit
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -21,8 +21,8 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
  public class TestRunner{
  }
+*/
 
-/*
 // using tentNG
 @CucumberOptions(
 	features = "features/forgotpassword.feature"
@@ -32,4 +32,4 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 public class TestRunner extends AbstractTestNGCucumberTests{
 
 }
-*/
+

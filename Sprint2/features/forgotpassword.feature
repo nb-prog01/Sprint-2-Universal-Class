@@ -1,5 +1,10 @@
 Feature: For Forgot password 
 
+	Scenario: Successful loading of Forgotton Password page
+    Given user is on Member Sign-in page
+    And user clicks on the Forgot password link
+    Then forgotton password page is loaded successfully
+    
   Scenario: Successful recovery of Forgot password
     Given user is on Member Sign-in page
     And user clicks on the Forgot password link
