@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import cucumber.api.java.After;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -80,5 +81,10 @@ public class StepDefinitions
     public void user_clicks_on_sign_up_button() throws Throwable 
     {
         fsp.signUp();
+    }
+    @After
+    public void teardown()
+    {
+    	driver.close();
     }
 }

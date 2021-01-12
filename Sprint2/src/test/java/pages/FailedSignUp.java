@@ -9,56 +9,67 @@ import org.openqa.selenium.WebElement;
 public class FailedSignUp 
 {
 	WebDriver driver;
+	private By hamburger = By.id("clssicon");
+	private By subscribe = By.xpath("//a[@href='https://secure.universalclass.com/payment_uc/2020/platinum.htm']");
+	private By option = By.xpath("(//a[@class='planbutton'])[1]");
+	private By fname = By.id("givenname");
+	private By lname = By.id("sn");
+	private By uname = By.id("mail");
+	private By pass = By.id("userpassword");
+	private By check = By.xpath("//input[@value='ToS']");
+	private By submit = By.xpath("//input[@value='Sign Up']");
+	private By show = By.xpath("//div[@role='alert']");
+	
 	public FailedSignUp(WebDriver drv)
 	{
 		this.driver=drv;
 	}
 	public void hmbutton()
 	{
-		driver.findElement(By.id("clssicon")).click();
+		driver.findElement(hamburger).click();
 	}
 	public void sub()
 	{
-		driver.findElement(By.xpath("(//a[@href='https://secure.universalclass.com/payment_uc/2020/platinum.htm'])[1]")).click();
+		driver.findElement(subscribe).click();
 	}
 	public void plan() throws InterruptedException
 	{
-		driver.findElement(By.xpath("(//a[@class='planbutton'])[1]")).click();
+		driver.findElement(option).click();
 		Thread.sleep(1500);
 	}
 	public void fname(String firstname) throws InterruptedException
 	{
 		Thread.sleep(1500);
-		driver.findElement(By.id("givenname")).sendKeys(firstname);		
+		driver.findElement(fname).sendKeys(firstname);		
 	}
 	public void lname(String lastname) throws InterruptedException
 	{
 		Thread.sleep(1500);
-		driver.findElement(By.id("sn")).sendKeys(lastname);
+		driver.findElement(lname).sendKeys(lastname);
 	}
 	public void emailId(String email) throws InterruptedException
 	{
 		Thread.sleep(1500);
-		driver.findElement(By.id("mail")).sendKeys(email);
+		driver.findElement(uname).sendKeys(email);
 		
 	}
 	public void paswd(String password) throws InterruptedException
 	{
 		Thread.sleep(1500);
-		driver.findElement(By.id("userpassword")).sendKeys(password);
+		driver.findElement(pass).sendKeys(password);
 		
 	}
 	public void policy()
 	{
-		driver.findElement(By.xpath("//input[@value='ToS']")).click();
+		driver.findElement(check).click();
 	}
 	public void signUp()
 	{
-		driver.findElement(By.xpath("//input[@value='Sign Up']")).click();
+		driver.findElement(submit).click();
 	}
 	public void display()
 	{
-		WebElement d=driver.findElement(By.xpath("//div[@role='alert']"));
+		WebElement d=driver.findElement(show);
 		String msg=d.getText();
 		System.out.println(msg);
 	}
