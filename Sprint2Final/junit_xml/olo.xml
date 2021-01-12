@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="1" tests="10" time="176.886217">
+    <testcase classname="For testing functionalties of website" name="Successful Sign-in" time="29.184396">
+        <system-out>
+            <![CDATA[Given user is Registered....................................................passed
+And user clicks on the hamburger dropdown...................................passed
+And user navtigates to and clicks the Sign-in option........................passed
+Then member Sign in page should load........................................passed
+When user enters registered akshitaa.sharma7@gmail.com and tomandjerry123...passed
+Then clients Homepage loads.................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="For testing functionalties of website" name="Unsuccessful Signin" time="14.078525">
+        <system-out>
+            <![CDATA[Given user is NOT Registered................................................passed
+And user clicks on the hamburger btn........................................passed
+And user navtigates to and clicks the Sign in option........................passed
+Then member Sign in page should load........................................passed
+When user enters unregistered unregemail@gmail.com or pass123...............passed
+Then error messgae should be displayed......................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="For testing functionalties of website" name="Unsuccessful Signin 2" time="15.034998">
+        <system-out>
+            <![CDATA[Given user is NOT Registered................................................passed
+And user clicks on the hamburger btn........................................passed
+And user navtigates to and clicks the Sign in option........................passed
+Then member Sign in page should load........................................passed
+When user enters unregistered olo@polo.com or garb123.......................passed
+Then error messgae should be displayed......................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="For testing functionalties of website" name="Unsuccessful Signin 3" time="13.163481">
+        <system-out>
+            <![CDATA[Given user is NOT Registered................................................passed
+And user clicks on the hamburger btn........................................passed
+And user navtigates to and clicks the Sign in option........................passed
+Then member Sign in page should load........................................passed
+When user enters unregistered polo.olo@com or dust123.......................passed
+Then error messgae should be displayed......................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="For testing functionalties of website" name="Successful Sign-up" time="9.79232">
+        <skipped>
+            <![CDATA[Given user is NOT registered................................................undefined
+And user clicks on the hamburger button.....................................skipped
+And user navtigates to and clicks the Subscribe option......................skipped
+Then Pricing page page should load..........................................skipped
+When user selects the suitable option.......................................skipped
+Then Sign-up page should load...............................................skipped
+And user enters Hardik, Thakur, hardikthakur1111@gmail.com, 1234567890......skipped
+And agrees to the terms and services checkbox...............................skipped
+And user clicks on Sign-up button...........................................skipped
+]]>
+        </skipped>
+    </testcase>
+    <testcase classname="For testing functionalties of website" name="Unsuccessful Sign up using Invalid credentials" time="20.9098">
+        <system-out>
+            <![CDATA[Given user clicks on site url...............................................passed
+And is on homepage..........................................................passed
+And user clicks on the hamburger icon.......................................passed
+And user navtigates to click the Subscribe option...........................passed
+And selects suitable plan...................................................passed
+When user enters invalid A or 4 or Amjuh@.com or Ansb4......................passed
+And user agrees to terms and services chechbox..............................passed
+And user clicks on Sign Up button...........................................passed
+Then an error message is displayed..........................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="For testing functionalties of website" name="Successful loading of Forgotton Password page" time="16.239529">
+        <system-out>
+            <![CDATA[Given user is on Member Sign in page........................................passed
+And user clicks on the Forgot password link.................................passed
+Then forgotton password page is loaded successfully.........................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="For testing functionalties of website" name="Successful recovery of Forgot password" time="21.726431">
+        <system-out>
+            <![CDATA[Given user is on Member Sign in page........................................passed
+And user clicks on the Forgot password link.................................passed
+Then recovery page should load..............................................passed
+When user enters registered email...........................................passed
+And clicks on Reset password button.........................................passed
+Then successful message should be displayed.................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="For testing functionalties of website" name="Unsuccessful recovery of Forgot password" time="20.727646">
+        <system-out>
+            <![CDATA[Given user is on Member Sign in page........................................passed
+And user clicks on the Forgot password link.................................passed
+Then recovery page should load..............................................passed
+When user enters unregistered email.........................................passed
+And clicks on Reset password button.........................................passed
+Then error message should be displayed......................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="For testing functionalties of website" name="searching in search box" time="16.029091">
+        <system-out>
+            <![CDATA[Given user is on Homepage...................................................passed
+And user enters English in the search box...................................passed
+And clicks the search button................................................passed
+Then Course catalouge should load...........................................passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>
