@@ -1,5 +1,7 @@
 package stepDefinition;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -60,18 +62,24 @@ public class StepDefinition {
     @Then("^Member Sign-in page should load$")
     public void member_signin_page_should_load() throws Throwable {
       String title = driver.getTitle();
-      System.out.println(title);
+      String t="Member Sign In | UniversalClass.com";
+      assertEquals(title,t);
+      System.out.println("User is at :"+title);
     }
 
     @Then("^clients Homepage loads$")
     public void clients_homepage_loads() throws Throwable {
-       driver.getTitle();
+       System.out.println("User is at "+driver.getTitle());
+      assertEquals(driver.getTitle(),"UniversalClass.com");
+
        Thread.sleep(2000);
     }
 
     @Then("^Course catalouge should load$")
     public void course_catalouge_should_load() throws Throwable {
-       System.out.println(driver.getTitle());
+       System.out.println("User is at "+driver.getTitle());
+       String a="Search | UniversalClass.com";
+       assertEquals(driver.getTitle(),a);
        Thread.sleep(2000);
     }
 

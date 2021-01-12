@@ -20,3 +20,4 @@ Feature: Sign In and search
     Examples:
     |searchtext|
     |English|
+    
